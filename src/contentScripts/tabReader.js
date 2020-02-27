@@ -22,7 +22,7 @@
         background: #fff;
         color: #000;
 
-        column-width: 33vw;
+        column-width: 20vw;
         column-fill: auto;
 
       }
