@@ -14,17 +14,17 @@
         left: 0;
         top: 0;
 
-        padding: 0.5rem;
+        padding: 0.5em;
 
         width: 100%;
         height: 100%;
 
+		font-size: 13px;
         background: #fff;
         color: #000;
 
-        column-width: 20vw;
+        column-width: 55em;
         column-fill: auto;
-
       }
 
       .js-reader pre {
@@ -33,6 +33,10 @@
 
       .js-reader pre > span {
         break-inside: avoid;
+      }
+
+      .js-reader pre > span > span {
+        display: inline;
       }
 
       .js-reader p {
@@ -71,6 +75,14 @@
     document.body.appendChild(readerContentWrapper);
     document.body.appendChild(originalContentWrapper);
     document.body.classList.add("js-reader-visible");
+
+    // Let's now optimize the column size
+    const widths = Array.from(document.querySelectorAll(".js-reader pre > span > span")).map(e => e.offsetWidth);
+    const max = Math.max(...widths)
+
+    if (max) {
+	    readerContentWrapper.style.columnWidth = max / 13 + "em";
+    }
   };
 
   const readerContent = document.querySelector(".js-reader");
