@@ -1,7 +1,7 @@
 {
   "name": "Ultimate Guitar Tab Reader",
   "version": "1.0",
-  "description": "Plugin for ultimateguitar.com that creates an alternative layout for tabs",
+  "description": "Chrome extension for ultimateguitar.com that creates an alternative layout for tabs",
   "manifest_version": 2,
   "permissions": [
     "activeTab",
